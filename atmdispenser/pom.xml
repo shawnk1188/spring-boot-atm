@@ -37,20 +37,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.owasp.esapi/esapi -->
-		<dependency>
-   			 <groupId>org.owasp.esapi</groupId>
-    		<artifactId>esapi</artifactId>
-    		<version>2.2.3.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.googlejavaformat/google-java-format -->
-<dependency>
-    <groupId>com.google.googlejavaformat</groupId>
-    <artifactId>google-java-format</artifactId>
-    <version>1.11.0</version>
-</dependency>
-
-
 	</dependencies>
 
 	<build>
