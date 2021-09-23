@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+    atmdispenser:
+        container_name: atmdispenser
+        build:
+            context: atmdispenser
+            dockerfile: Dockerfile
+        image: atmdispenser:latest
+        ports:
+            - 8888:8888

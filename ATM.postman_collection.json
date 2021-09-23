@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "c70696c1-00d9-48d5-9bb6-70973eb91036",
+		"name": "ATM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ATM VALIDATE PIN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8888/atm/validatePin?pin=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"validatePin"
+					],
+					"query": [
+						{
+							"key": "pin",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ATM VALIDATE PIN FAILURE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/atm/validatePin?pin=123%23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"validatePin"
+					],
+					"query": [
+						{
+							"key": "pin",
+							"value": "123%23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VIEW USER OPTIONS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8888/atm/getUserOptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"getUserOptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VIEW CHECKING BALANCE",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8888/atm/account/balance?accountType=checking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"account",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "checking"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VIEW SAVINGS BALANCE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/atm/account/balance?accountType=savings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"account",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "savings"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPOSIT AMOUNT TO CHECKING",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountType\":\"checking\",\n    \"amount\":1000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/atm/account/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"account",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WITHDRAW AMOUNT FROM SAVING",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountType\":\"savings\",\n    \"amount\":2000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/atm/account/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"account",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPOSIT AMOUNT FROM CHECKING",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountType\":\"checking\",\n    \"amount\":1000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/atm/account/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"account",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSUFFICIENT AMOUNT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountType\":\"checking\",\n    \"amount\":1000000000000000000000000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/atm/account/withDraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"account",
+						"withDraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPOSIT AMOUNT TO SAVING",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountType\":\"checking\",\n    \"amount\":1000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8888/atm/account/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"atm",
+						"account",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
