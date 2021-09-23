@@ -1,13 +1,13 @@
-package com.sailpoint.atmdispenser.service;
+package com.sailpoint.atmdispenser.entity;
 
 import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service
-public class AccountService {
+@Repository
+public class AccountRepository {
 
     private BigDecimal defaultCurrentBalance = new BigDecimal(10000000000000.00);
 
@@ -25,7 +25,7 @@ public class AccountService {
                       System.out.println("Depositing Amount");
                       System.out.println("Please Enter The Amount You Would Like To Deposit");
                       BigDecimal depositAmount =userOption.nextBigDecimal();
-                      defaultCurrentBalance = defaultCurrentBalance.add(depositAmount);
+                      defaultCurrentBalance = defaultCurrentBalance.add(depositAmount.abs());
                       displayCurrentBalance(defaultCurrentBalance);
                       anotherTransaction(userOption);
                       break;
@@ -34,7 +34,7 @@ public class AccountService {
                      System.out.println("Please Enter The Amount You Would Like To Withdraw");
                      BigDecimal withDrawAmount =userOption.nextBigDecimal();
                      if(defaultCurrentBalance.compareTo(withDrawAmount)==1 || defaultCurrentBalance.compareTo(withDrawAmount)==0){
-                        defaultCurrentBalance = defaultCurrentBalance.subtract(withDrawAmount);
+                        defaultCurrentBalance = defaultCurrentBalance.subtract(withDrawAmount.abs());
                         displayCurrentBalance(defaultCurrentBalance);
                       }else{
                          System.out.println("Insufficient Balance");
@@ -58,7 +58,7 @@ public class AccountService {
     }
 
 
-    public void anotherTransaction(Scanner userOption){
+    private void anotherTransaction(Scanner userOption){
         displayAnotherTransactionOptions();
         try{
         while(userOption.hasNext()){
@@ -84,11 +84,11 @@ public class AccountService {
     }
     }
 
-    public void displayCurrentBalance(BigDecimal currentBalance){
+    private void displayCurrentBalance(BigDecimal currentBalance){
         System.out.println("Your Current Balance is: " + currentBalance);
     }
 
-    public void displayAnotherTransactionOptions(){
+    private void displayAnotherTransactionOptions(){
         System.out.println("\n");
         System.out.println("*******************");
         System.out.println("If Would You Like to Make An Another Transaction Choose An Option Below:");
@@ -98,7 +98,7 @@ public class AccountService {
     }
 
 
-    public void displayUserOptions(){
+    private void displayUserOptions(){
         System.out.println("\n");
         System.out.println("Please Select An Option From Below:");
         System.out.println("\n");

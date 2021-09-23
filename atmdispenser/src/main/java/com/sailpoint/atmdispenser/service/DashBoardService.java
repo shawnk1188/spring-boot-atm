@@ -1,5 +1,6 @@
 package com.sailpoint.atmdispenser.service;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -60,6 +61,7 @@ public class DashBoardService implements ApplicationRunner{
         System.out.println("2.Checking");
         System.out.println("***********************");
         System.out.println("\n");
+        try{
         while(input.hasNext()){
         int option = input.nextInt();
         switch(option){
@@ -73,6 +75,14 @@ public class DashBoardService implements ApplicationRunner{
                     System.out.println("Please Select A Valid Option");
                     input.nextLine();
                     selectAccountForWithDrawal(input);
+        }
+    }
+    }
+    catch(Exception e){
+        if(e instanceof InputMismatchException){
+            System.out.println("Please Enter a Valid Option");
+            input.nextLine();
+            selectAccountForWithDrawal(input);
         }
     }
     }

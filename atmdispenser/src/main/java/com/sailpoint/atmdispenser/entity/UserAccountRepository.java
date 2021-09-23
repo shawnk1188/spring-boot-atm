@@ -6,7 +6,6 @@ import java.util.List;
 import com.sailpoint.atmdispenser.model.AccountRequest;
 import com.sailpoint.atmdispenser.model.AccountResponse;
 import com.sailpoint.atmdispenser.model.UserOption;
-import com.sailpoint.atmdispenser.service.AccountService;
 import com.sailpoint.atmdispenser.utils.ApplicationConstants;
 
 import org.springframework.stereotype.Component;
@@ -14,7 +13,7 @@ import java.math.BigDecimal;
 
 
 @Component
-public class UserAccountRepository extends AccountService{
+public class UserAccountRepository extends AccountRepository{
 
     private BigDecimal defaultSavingsBalance = new BigDecimal(10000000000000.00);
     private BigDecimal defaultCheckingBalance = new BigDecimal(20000000000000.00);

@@ -13,4 +13,9 @@ public class ApplicationExceptionMapper extends ResponseEntityExceptionHandler{
     protected ResponseEntity<String> handleValidationException(ValidationException e){
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Please Enter A Valid 4 Digit Pin");
     }
+
+    @ExceptionHandler(value = {Exception.class})
+    protected ResponseEntity<String> handleExceptions(Exception e){
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("OUT OF SERVICE: Please Try Again Later");
+    }
 }
