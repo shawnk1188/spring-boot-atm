@@ -4,7 +4,8 @@ Assessment:
 
 ATM
 
-This is a spring boot application simulating ATM machine's logic.
+This is a spring boot application simulating ATM machine's logic. 
+Has configuration for running as a command line and also as a rest api interation.
 
 Pre-Requisites:
     1. User Has Already Inserted his debit card into the machine.
