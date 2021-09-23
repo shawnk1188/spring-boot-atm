@@ -8,6 +8,7 @@ This is a spring boot application simulating ATM machine's logic.
 
 Pre-Requisites:
     1. User Has Already Inserted his debit card into the machine.
+    2. lombok installed for preferred IDE
 
 Technologies:
   maven
