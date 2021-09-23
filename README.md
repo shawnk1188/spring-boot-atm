@@ -9,6 +9,7 @@ This is a spring boot application simulating ATM machine's logic.
 Pre-Requisites:
     1. User Has Already Inserted his debit card into the machine.
     2. Always absolute value is taken into consideration (ideal world user would not be having negative(-) option).
+    3. lombok installed for preferred IDE
 
 Technologies:
   maven
@@ -34,6 +35,7 @@ BUILD & RUN:
         Starting Application:
             1. mvn spring-boot:run
             2. From Main Class AutomaticTellerMachineApplication.java Run as java application.
+            3. From target folder java -jar atmdispenser-0.0.1.jar
         DashBoard Screen Entering PIN:
 
         Screen:
