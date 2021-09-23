@@ -34,6 +34,7 @@ BUILD & RUN:
         Starting Application:
             1. mvn spring-boot:run
             2. From Main Class AutomaticTellerMachineApplication.java Run as java application.
+            3. From target folder java -jar atmdispenser-0.0.1.jar
         DashBoard Screen Entering PIN:
 
         Screen:
