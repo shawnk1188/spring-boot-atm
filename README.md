@@ -85,3 +85,4 @@ REST API Tests:
 
 Improvements:
     1. Integrating with a data store.
+    2. Logging for applicationtracking.
