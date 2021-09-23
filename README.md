@@ -30,6 +30,9 @@ BUILD & RUN:
             docker-compose --up build
     
     Local Running From Command Line: 
+        Starting Application:
+            1. mvn spring-boot:run
+            2. From Main Class AutomaticTellerMachineApplication.java Run as java application.
         DashBoard Screen Entering PIN:
 
         Screen:
